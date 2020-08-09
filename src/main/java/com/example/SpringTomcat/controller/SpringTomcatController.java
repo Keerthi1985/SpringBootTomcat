@@ -6,6 +6,7 @@ import com.example.SpringTomcat.model.Expense;
 import com.example.SpringTomcat.repository.ExpenseRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
@@ -79,5 +80,19 @@ public class SpringTomcatController {
 		        .request(MediaType.TEXT_PLAIN)
 		        .get(String.class);*/
 		
+	}
+	
+	@Value("${welcome.message}")
+	private String welcomeMessage;
+	
+	@Value("${greeting.message}")
+	private String greetingMessage;
+	
+	@GetMapping("/welcome")
+	private String welcome() {
+        /*String applicationName = System.getenv().getOrDefault("SPRING_BOOT_APP_ENV_CONFIG_APP_NAME", "Hello World");
+        String description = System.getenv().getOrDefault("SPRING_BOOT_APP_ENV_CONFIG_APP_DESC", "Simple Application");*/
+
+        return String.format(welcomeMessage,greetingMessage);
 	}
 }
