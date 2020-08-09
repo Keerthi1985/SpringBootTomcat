@@ -32,7 +32,7 @@ spec:
           - containerPort: 8082
           volumeMounts:
           - name: spring-boot-app-env-config-volume
-            mountPath: "/config"
+            mountPath: "/deployments/config"
             readOnly: true
       volumes:
         - name: spring-boot-app-env-config-volume
