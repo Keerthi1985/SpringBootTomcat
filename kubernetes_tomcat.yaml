@@ -17,31 +17,23 @@ kind: Pod
 metadata:
   name: springtomcat
 spec:
-  selector:
-    matchLabels:
-      app: springtomcat
-  template:
-    metadata:
-      labels:
-        app: springtomcat
-    spec:
-      containers:
-        - name: server
-          image: docker.io/keerthi19/springtomcat:withapp3
-          ports:
-          - containerPort: 8082
-          volumeMounts:
-          - name: spring-boot-app-env-config-volume
-            mountPath: "/config"
-            readOnly: true
-      volumes:
-        - name: spring-boot-app-env-config-volume
-          configMap:
-            name: spring-app-config
-            items:
-            - key: application.properties
-              path: application.properties
-      restartPolicy: Always       
+  containers:
+    - name: server
+      image: docker.io/keerthi19/springtomcat:withapp3
+      ports:
+      - containerPort: 8082
+      volumeMounts:
+      - name: spring-boot-app-env-config-volume
+        mountPath: "/config"
+        readOnly: true
+  volumes:
+    - name: spring-boot-app-env-config-volume
+      configMap:
+        name: spring-app-config
+        items:
+        - key: application.properties
+          path: application.properties
+  restartPolicy: Always       
 ---
 apiVersion: v1
 kind: Service
