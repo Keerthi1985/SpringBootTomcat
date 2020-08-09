@@ -28,14 +28,14 @@ public class SpringTomcatController {
 	    
 		System.out.println("Hello Tomcat");
 		
-		Client client1 = ClientBuilder.newClient();
+		/*Client client1 = ClientBuilder.newClient();
 		System.out.println("setting client");
 		String name = client1.target("http://springjetty:8083/jettyHello")
 		        .request(MediaType.TEXT_PLAIN)
-		        .get(String.class);
+		        .get(String.class);*/
 		
 		getExpenseData();
-		helloEmbeddedJetty();
+		//helloEmbeddedJetty();
 		
 		return "Hello Tomcat Headers";
 	}
@@ -73,11 +73,11 @@ public class SpringTomcatController {
 	    
 		System.out.println("helloEmbeddedJetty");
 		
-		Client client1 = ClientBuilder.newClient();
+		/*Client client1 = ClientBuilder.newClient();
 		System.out.println("setting client");
 		String name = client1.target("http://embeddedjetty:8084/normaljettyhello")
 		        .request(MediaType.TEXT_PLAIN)
-		        .get(String.class);
+		        .get(String.class);*/
 		
 	}
 }
