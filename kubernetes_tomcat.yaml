@@ -31,31 +31,31 @@ spec:
           ports:
           - containerPort: 8082
           env:
-        - name: SPRING_SQL1
-          valueFrom:
-            configMapKeyRef:
-              name: spring-app-config
-              key: spring.jpa.hibernate.ddl-auto    
-        - name: SPRING_SQL2
-          valueFrom:
-            configMapKeyRef:
-              name: spring-app-config
-              key: spring.datasource.url
-        - name: SPRING_SQL3
-          valueFrom:
-            configMapKeyRef:
-              name: spring-app-config
-              key: spring.datasource.username
-        - name: SPRING_SQL4
-          valueFrom:
-            configMapKeyRef:
-              name: spring-app-config
-              key: spring.datasource.password 
-        - name: SPRING_SQL4
-          valueFrom:
-            configMapKeyRef:
-              name: spring-app-config
-              key: logging.level.root     
+            - name: SPRING_SQL1
+              valueFrom:
+                configMapKeyRef:
+                  name: spring-app-config
+                  key: spring.jpa.hibernate.ddl-auto    
+            - name: SPRING_SQL2
+              valueFrom:
+                configMapKeyRef:
+                  name: spring-app-config
+                  key: spring.datasource.url
+            - name: SPRING_SQL3
+              valueFrom:
+                configMapKeyRef:
+                  name: spring-app-config
+                  key: spring.datasource.username
+            - name: SPRING_SQL4
+              valueFrom:
+                configMapKeyRef:
+                  name: spring-app-config
+                  key: spring.datasource.password 
+            - name: SPRING_SQL4
+              valueFrom:
+                configMapKeyRef:
+                  name: spring-app-config
+                  key: logging.level.root     
 ---
 apiVersion: v1
 kind: Service
