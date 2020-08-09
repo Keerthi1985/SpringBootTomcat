@@ -93,6 +93,14 @@ public class SpringTomcatController {
         /*String applicationName = System.getenv().getOrDefault("SPRING_BOOT_APP_ENV_CONFIG_APP_NAME", "Hello World");
         String description = System.getenv().getOrDefault("SPRING_BOOT_APP_ENV_CONFIG_APP_DESC", "Simple Application");*/
 
-        return String.format(welcomeMessage,greetingMessage);
+        return String.format(welcomeMessage);
+	}
+	
+	@GetMapping("/greeting")
+	private String greeting() {
+        /*String applicationName = System.getenv().getOrDefault("SPRING_BOOT_APP_ENV_CONFIG_APP_NAME", "Hello World");
+        String description = System.getenv().getOrDefault("SPRING_BOOT_APP_ENV_CONFIG_APP_DESC", "Simple Application");*/
+
+        return String.format(greetingMessage);
 	}
 }
