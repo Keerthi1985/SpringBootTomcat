@@ -4,9 +4,9 @@ metadata:
   name: spring-app-config
   namespace: default
 data:
-    spring.jpa.hibernate.ddl-auto=none
-    spring.datasource.url=jdbc:mysql://mysql:3306/testdb
-    spring.datasource.username=root
-    spring.datasource.password=Varijaks1985*0
-    logging.level.root=WARN 
+    spring.jpa.hibernate.ddl-auto:none
+    spring.datasource.url:jdbc:mysql://mysql:3306/testdb
+    spring.datasource.username:root
+    spring.datasource.password:Varijaks1985*0
+    logging.level.root:WARN
  
