@@ -27,7 +27,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: docker.io/keerthi19/springtomcat:withapp2
+          image: docker.io/keerthi19/springtomcat:withapp3
           ports:
           - containerPort: 8082
           volumeMounts:
