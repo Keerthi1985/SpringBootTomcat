@@ -30,17 +30,9 @@ spec:
           image: docker.io/keerthi19/springtomcat:noapp1
           ports:
           - containerPort: 8082
-          volumeMounts:
-          - name: spring-boot-app-env-config-vol 
-            mountPath: "/config" 
-            readOnly: true
-      volumes:
-        - name: spring-boot-app-env-config-vol
-          configMap:
-            name: spring-app-config
-            items:
-            - key: application.properties 
-              path: application.properties       
+          envFrom:
+          - configMapRef:
+              name: spring-app-config      
 ---
 apiVersion: v1
 kind: Service
@@ -54,7 +46,4 @@ spec:
   - name: http
     port: 8082
     targetPort: 8082
-  - name: metrics
-    port: 9300
-    targetPort: 9300    
 ---       
