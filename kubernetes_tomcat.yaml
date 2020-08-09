@@ -27,12 +27,9 @@ spec:
     spec:
       containers:
         - name: server
-          image: docker.io/keerthi19/springtomcat:noapp1
+          image: docker.io/keerthi19/springtomcat:withapp1
           ports:
           - containerPort: 8082
-          envFrom:
-          - configMapRef:
-              name: spring-app-config     
 ---
 apiVersion: v1
 kind: Service
