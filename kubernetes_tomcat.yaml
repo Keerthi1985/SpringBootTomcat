@@ -37,8 +37,10 @@ spec:
       volumes:
         - name: spring-boot-app-env-config-vol
           configMap:
-          name: spring-app-config
-          key: application.properties       
+            name: spring-app-config
+            items:
+            - key: application.properties 
+              path: application.properties       
 ---
 apiVersion: v1
 kind: Service
