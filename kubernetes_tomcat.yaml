@@ -13,7 +13,7 @@
 # limitations under the License.
 
 apiVersion: apps/v1
-kind: Deployment
+kind: Pod
 metadata:
   name: springtomcat
 spec:
