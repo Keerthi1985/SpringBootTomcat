@@ -12,28 +12,36 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: springtomcat
 spec:
-  containers:
-    - name: server
-      image: docker.io/keerthi19/springtomcat:withapp3
-      ports:
-      - containerPort: 8082
-      volumeMounts:
-      - name: spring-boot-app-env-config-volume
-        mountPath: "/config"
-        readOnly: true
-  volumes:
-    - name: spring-boot-app-env-config-volume
-      configMap:
-        name: spring-app-config
-        items:
-        - key: application.properties
-          path: application.properties
-  restartPolicy: Always       
+  selector:
+    matchLabels:
+      app: springtomcat
+  template:
+    metadata:
+      labels:
+        app: springtomcat
+    spec:
+      containers:
+        - name: server
+          image: docker.io/keerthi19/springtomcat:withapp3
+          ports:
+          - containerPort: 8082
+          volumeMounts:
+          - name: spring-boot-app-env-config-volume
+            mountPath: "/config"
+            readOnly: true
+      volumes:
+        - name: spring-boot-app-env-config-volume
+          configMap:
+            name: spring-app-config
+            items:
+            - key: "application.properties"
+              path: "application.properties"
+      restartPolicy: Always       
 ---
 apiVersion: v1
 kind: Service
