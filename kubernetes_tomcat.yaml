@@ -30,8 +30,6 @@ spec:
           image: docker.io/keerthi19/springtomcat:withapp3
           ports:
           - containerPort: 8082
-          exec:
-            command: ["/bin/sh", "-c","ls /config/"]
           volumeMounts:
           - name: spring-boot-app-env-config-volume
             mountPath: "/config"
