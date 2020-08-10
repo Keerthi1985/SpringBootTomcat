@@ -27,17 +27,17 @@ spec:
     spec:
       containers:
         - name: server
-          image: docker.io/keerthi19/springtomcat:noapp1
+          image: docker.io/keerthi19/springtomcat:withapp3
           ports:
-          - containerPort: 8082
-          command: ["/bin/sh","-c","cat /config/application.properties"]
+          - containerPort: 8082          
           volumeMounts:
           - name: spring-boot-app-env-config-vol 
             mountPath: "/config"
       volumes:
         - name: spring-boot-app-env-config-vol
           configMap:
-            name: spring-app-config    
+            name: spring-app-config
+      restartPolicy: Always     
 ---
 apiVersion: v1
 kind: Service
