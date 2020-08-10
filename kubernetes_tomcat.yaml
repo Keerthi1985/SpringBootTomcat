@@ -20,11 +20,12 @@ spec:
   containers:
     - name: server
       image: docker.io/keerthi19/springtomcat:withapp3
-      command: ["/bin/sh","-c","cat /config/application.properties"]
       volumeMounts:
       - name: spring-boot-app-env-config-volume
         mountPath: "/config"
         readOnly: true
+  
+  command: ["/bin/sh","-c","cat /config/application.properties"]
   volumes:
     - name: spring-boot-app-env-config-volume
       configMap:
