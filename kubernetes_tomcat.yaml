@@ -31,10 +31,9 @@ spec:
           ports:
           - containerPort: 8082
           volumeMounts:
+          command: ["/bin/sh", "-c", "ls /config"]
           - name: spring-boot-app-env-config-volume
             mountPath: "/config"
-            exec:
-              command: ["/bin/sh", "-c", "ls /config"]
             readOnly: true
       volumes:
         - name: spring-boot-app-env-config-volume
