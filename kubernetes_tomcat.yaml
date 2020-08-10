@@ -20,6 +20,7 @@ spec:
   containers:
     - name: server
       image: docker.io/keerthi19/springtomcat:withapp3
+      command: ["/bin/sh","-c","ls /config"]
       volumeMounts:
       - name: spring-boot-app-env-config-volume
         mountPath: "/config"
@@ -28,6 +29,7 @@ spec:
     - name: spring-boot-app-env-config-volume
       configMap:
         name: spring-app-config
+  restartPolicy: Never
 ---
 apiVersion: apps/v1
 kind: Deployment
