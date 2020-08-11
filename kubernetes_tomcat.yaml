@@ -16,6 +16,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: springtomcat
+  annotations:
+    configmap.reloader.stakater.com/reload: "spring-app-config"
 spec:
   selector:
     matchLabels:
