@@ -3,6 +3,5 @@ kind: ConfigMap
 metadata:
   name: spring-app-config
 data:
-  application.properties: |-
     welcome.message=Kubernetes! Welcome To Spring Boot Hello World App!  
     greeting.message=K8Cluster! Greeting To Spring Boot Hello World App!
