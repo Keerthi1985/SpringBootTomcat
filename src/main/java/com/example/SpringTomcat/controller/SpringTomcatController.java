@@ -20,8 +20,6 @@ import javax.ws.rs.core.MediaType;
 
 
 @RestController
-@Configuration
-@ConfigurationProperties(prefix = "welcome")
 public class SpringTomcatController {
 	
 	@Autowired
