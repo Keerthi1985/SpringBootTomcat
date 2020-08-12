@@ -12,11 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
-import javax.ws.rs.client.Client;
-import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.core.MediaType;
-
-
 
 @RestController
 public class SpringTomcatController {
